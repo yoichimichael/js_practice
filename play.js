@@ -1,4 +1,18 @@
-const fetchData = () => {
+// const fetchData = callback => {
+//   setTimeout(() => {
+//     callback('Done!');
+//   }, 1500);
+// }
+
+// setTimeout(() => {
+//   console.log('Timer is done');
+//   fetchData(text => {
+//     console.log(text)
+//   });
+// }, 2000);
+
+
+const fetchDataWithPromise = () => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Done!');
@@ -9,10 +23,10 @@ const fetchData = () => {
 
 setTimeout(() => {
   console.log('Timer is done!');
-  fetchData()
+  fetchDataWithPromise()
     .then(text => {
       console.log(text);
-      return fetchData();
+      return fetchDataWithPromise();
     })
     .then(text2 => {
       console.log(text2);
