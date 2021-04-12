@@ -18,3 +18,6 @@ setTimeout(() => {
       console.log(text2);
     });
 }, 2000);
+
+console.log('Hello!');
+console.log('Hi!');
